@@ -1,8 +1,8 @@
-#1 two sum
+# 1 two sum
 ### 1.暴力解法 
-####即双重循环逐个匹配
-#####这种方法时间复杂度很高，但空间复杂度较低
-#####C++实现
+#### 即双重循环逐个匹配
+##### 这种方法时间复杂度很高，但空间复杂度较低
+##### C++实现
 ```cpp
 class Solution {
 public:
@@ -20,7 +20,7 @@ public:
     }
 };
 ```
-#####python实现
+##### python实现
 ```py
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
