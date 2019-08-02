@@ -1,5 +1,5 @@
 # 1 two sum
----
+
 ### 1.暴力解法 
 > 即双重循环逐个匹配
 
@@ -10,9 +10,9 @@ class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         vector<int> ans;
-//注意不能直接声明数组，直接声明的数组是在栈中
-//需要动态分配堆上的内存
-        for(int i=0;i<nums.size();++i)
+//这里采用了模板类vector
+//注意不能直接声明数组，要加上static将其变成全局变量，这样返回的数组是可以被访问的
+       for(int i=0;i<nums.size();++i)
           for(int j=i+1;j<nums.size();++j){
               if(nums[i]+nums[j]==target)
               {
@@ -47,8 +47,9 @@ class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         vector<int> ans;//存储答案
-        vector<int> nums_copy=nums;//复制数组
-        //因为排序后原数值对应的下标会变
+        vector<int> nums_copy=nums;
+        //因为排序后原数组对应的下标会变
+        //所以需要复制一个副本，以便于定位
         int low=0;//指向起点
         int high=nums.size()-1;//指向末端
         int sum; //计算和用于比较
