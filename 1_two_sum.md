@@ -78,35 +78,41 @@ public:
 };
 ```
 ##### python
->这个代码是正确的，但是submit后超时了，思路和上面的一模一样，事实证明python不适合这样写。
+>在用python按照这个思路的时候犯了几个错误导致无法AC。
+1 python没有 ++i 这种语法
+2 进行复制列表时要要这种格式 a=b[:]，即要加上切片运算符，不然的话只是将a指向了b列表，并没有复制。
+
+
+
 ```py
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        nums_copy=nums
+        nums_copy=nums[:]
         nums.sort()
-        numSize=len(nums)
         low=0
-        high=numSize-1
+        high=len(nums)-1
         sum=nums[low]+nums[high]
         while sum!=target:
             if sum>target:
-                --high
+                high-=1
             elif sum<target:
-                ++low
+                low+=1
             sum=nums[low]+nums[high]
         i=0
         for value1 in nums_copy:
             if value1==nums[low]:
                 break
-            ++i
+            i+=1
         j=len(nums)-1
-        for value2 in range(numSize-1,-1,-1):
+        for value2 in reversed(nums_copy):
             #倒序循环
             if value2==nums[high]:
                 break
-            --j
+            j-=1
         return [i,j]
 ```
+
+
 ---
 
 
