@@ -1,4 +1,5 @@
 # 二分法
+##### C++
 ```cpp
 class Solution {
 public:
