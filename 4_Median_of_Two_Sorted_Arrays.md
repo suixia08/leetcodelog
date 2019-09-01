@@ -1,9 +1,4 @@
 # 二分法
-### 思路
-![leetcode _4-1.jpg](https://i.loli.net/2019/08/31/M4iakHpXPjsnZV9.jpg)
-![leetcode _4-2.jpg](https://i.loli.net/2019/08/31/ITJAYs5M1ypPtiO.jpg)
-![leetcode _4-3.jpg](https://i.loli.net/2019/08/31/TxILVGbAFodeQ1z.jpg)
-##### 代码实现
 ```cpp
 class Solution {
 public:
